@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florial</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars" id="menuToggle"></label>
+        <a href="#" class="logo">FLORIA </a>
+        <nav class="navbar">
+            <a href="#" onClick="clickInner('home.html');">Home</a>
+            <a href="./home.html#product">Product</a>
+            <a href="#" onClick="clickInner('about.html');">About Us</a>
+            <a href="#" onClick="clickInner('contact.html');">Contact us</a>
+            <a href="./home.html#reviews">Reviews</a>
+        </nav>
+        <div class="icons">
+
+            <a href="#" onclick="clickInner('checkout.html');" class="fas fa-shopping-cart"></a>
+            <a href="#" onclick="clickInner('login.html');" class="fas fa-user"></a>
+        </div>
+    </header>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            console.log("navigate")
+            navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        });
+        function clickInner(target) {
+            window.location.href= `./${target}`; // navigate
+        };
+    </script>
+    <div class="container">
+        <div class="form-box">
+            <form action="" name="Formfill" onsubmit="return validation()">
+                <h2>Login</h2>
+                <p id="result"></p>
+                <div class="input-box">
+                    <i class='bx bxs-user'></i>
+                    <input type="text" name="Username" placeholder="Username">
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-envelope'></i>
+                    <input type="email" name="Email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" name="Password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn" onclick="openPopup()">submit</button>
+                    <div class="popup" id="popup">
+                        <img src="images/tick.png"alt="">
+                        <h2> LOGIN SUCCESSFUL</h2>
+                        <p>You have successfully signed into your account.thanks!</p>
+                        <button type="button" onclick="closePopup()"><a href="home.html">OK</a></button>
+                        </div>
+                <div class="group">
+                    <span><a href="froget.html">Forgot-Password</a></span>
+                    <span><a href="register.html">Registeration</a></span>
+                </div>
+            </form>
+        </div>
+        <script src="js/login.js"></script>
+    </body>
+</html>

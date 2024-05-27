@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/review.css" />
+    <title>Florial - Reviews</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars" id="menuToggle"></label>
+        <a href="#" class="logo">FLORIA </a>
+        <nav class="navbar">
+            <a href="#" onClick="clickInner('home.html');">Home</a>
+            <a href="./home.html#product">Product</a>
+            <a href="#" onClick="clickInner('about.html');">About Us</a>
+            <a href="#" onClick="clickInner('contact.html');">Contact us</a>
+            <a href="./home.html#reviews">Reviews</a>
+        </nav>
+        <div class="icons">
+
+            <a href="#" onclick="clickInner('checkout.html');" class="fas fa-shopping-cart"></a>
+            <a href="#" onclick="clickInner('login.html');" class="fas fa-user"></a>
+        </div>
+    </header>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            console.log("navigate")
+            navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        });
+        function clickInner(target) {
+            window.location.href= `./${target}`; // navigate 
+        };
+    </script>
+    <section class="review-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">what our clients say</h2>
+            </div>
+            <div class="review-content">
+                <div class=" swiper review-slider js-review-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide review-item">
+                            <div class="info">
+                                <div class="text-box">
+                                    <div class="img1"><img src="./images/img9.jpg" alt="img" srcset=""></div>
+                                    <h3 class="name">john </h3>
+                                    <span class="job">web developer</span>
+                                </div>
+                            </div>
+                            <p>The flowers were unique, gorgeous, and very, very fresh </p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div class=" swiper-slide review-item">
+                            <div class="info">
+                                <div class="text-box">
+                                    <div class="img1"><img src="./images/img10.jpg" alt="img" srcset=""></div>
+                                    <h3 class="name">alexandra </h3>
+                                    <span class="job">web developer</span>
+                                </div>
+                            </div>
+                            <p>Beautiful flowers, great service </p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div class=" swiper-slide review-item">
+                            <div class="info">
+                                <div class="text-box">
+                                    <div class="img1"><img src="./images/img11.jpg" alt="img" srcset=""></div>
+                                    <h3 class="name">haely</h3>
+                                    <span class="job">web developer</span>
+                                </div>
+                            </div>
+                            <p> Always fresh flowers that last & good service</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="swiper-slide review-item">
+                            <div class="info">
+                                <div class="text-box">
+                                    <div class="img1"><img src="./images/img12.jpg" alt="img" srcset=""></div>
+                                    <h3 class="name">trees </h3>
+                                    <span class="job">web developer</span>
+                                </div>
+                            </div>
+                            <p>The flowers were fabulous. The bouquet was fresh, vibrant and packed with a great variety
+                                of beautiful colourful flowers. </p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4> company</h4>
+                    <ul class="UL">
+                        <li><a href="#"> about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">privacy policy</a> </li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4> get help</h4>
+                    <ul class="UL">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#"> ordar status</a></li>
+                        <li><a href="#"> payment option</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"></a> <i class="fab fa-facebook-f"></i></a>
+                        <a href="#"></a> <i class="fab fa-instagram"></i></a>
+                        <a href="#"></a> <i class="fab fa-twitter"></i></a>
+                        <a href="#"></a> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.js-review-slider', {
+            grabcursor: true,
+            autoplay: true,
+            spacebetween: 30,
+            breakpoints: {
+                767: {
+                    slidesperview: 2
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

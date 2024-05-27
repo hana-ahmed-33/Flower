@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+font-family: poppins, sans-serif;
+font-size: 16px;
+background: whitesmoke;
+} 
+.review-section {
+    padding: 50px;
+}
+.review-container{
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+    margin-top: 75px;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-header .title{
+    font-size: 35px;
+    font-weight: 600;
+text-transform: capitalize;
+color: rgba(99, 99, 191, 0.945);
+line-height: 1.2;
+}
+.review{
+    padding:100px 0;
+
+}
+.review-item{
+    background-color:hsl(0,0%,100%); 
+    padding: 30px;
+    border-radius: 30px;
+}
+.review-item .info{
+    display: flex;
+    align-items: center;
+}
+.review-item img{
+    max-width: 80px;
+    border-radius: 50%;
+    margin-right: 20px; 
+    vertical-align: middle;
+}
+.review-item .name{
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: black;
+    line-height: 1.2;
+}
+
+.review-item .job{
+    text-transform: capitalize;
+    color: hsl(0,0%,40%);
+}
+.review-item p{
+    margin-top: 20px;
+    color: hsl(0,0%,40%) ;
+}
+.review-item .rating{
+    margin-top: 15px;
+    font-size: 14px;
+    color:hsl(36,88%,66%);
+}
+

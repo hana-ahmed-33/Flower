@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About us page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars" id="menuToggle"></label>
+        <a href="#" class="logo">FLORIA</a>
+        <nav class="navbar">
+          <a href="#" onClick="clickInner('home.html');">Home</a>
+          <a href="./home.html#product">Product</a>
+          <a href="#" onClick="clickInner('about.html');">About Us</a>
+          <a href="#" onClick="clickInner('contact.html');">Contact us</a>
+          <a href="./home.html#reviews">Reviews</a>
+      </nav>
+
+        <div class="icons">
+        
+            <a href="#" onclick="clickInner('checkout.html');" class="fas fa-shopping-cart"></a>
+            <a href="#" onclick="clickInner('login.html');" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var navbar = document.querySelector('.navbar');
+            console.log("navigate")
+            navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        });
+        function clickInner(target) {
+            window.location.href= `./${target}`; // navigate
+        };
+    </script>
+  <section class ="about">
+      <div class="main">
+          <img src="./images/photo_5864033697110540807_y.jpg">
+          <div class="about-text">
+              <h1>About Us</h1>
+              <h5>Best Flower Sellers</h5>
+              <p><b>We Are Passionate About Providing The Freshest And Most Beautiful Flowers For All Occasions.Our Team Of Dedicated Florists Carefully Handpick Each Stem To Ensure Every Bouquet Is A Masterpiece.</b></p>
+              <p><b>We Believe In The Power Of Flowers To Brightn Someone's Day.Celebrate Special Moments ,And Express Love And Appreciation..Whether You Need Flowers For A Wedding ,Birthday,Anniversary, Or Just To Show Someone You Care, We've Got You Covered.</p></b>
+              <a href="#"class="btn">learn more</a>
+
+    </div>
+
+</div>
+
+</section> 
+
+<footer class="footer">
+<div class="container">
+<div class="row">
+  <div class="footer-col">
+    <h4> company</h4>
+    <ul class="UL">
+      <li><a href="#"> About us</a></li>
+      <li><a href="#">Our services</a></li>
+      <li><a href="#">Contact us</a></li>
+      <li><a href="#">privacy policy</a> </li>
+    </ul>
+  </div>
+
+<div class="footer-col">
+    <h4> get help</h4>
+    <ul class="UL">
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">shipping</a></li>
+      <li><a href="#">returns</a></li>
+      <li><a href="#"> ordar status</a></li>
+      <li><a href="#"> payment option</a></li>
+  </ul>
+  </div>
+  <div class="footer-col">
+    <h4>follow us</h4>
+    <div class="social-links">
+     <a href="#"></a> <i class="fab fa-facebook-f"></i></a>
+     <a href="#"></a> <i class="fab fa-instagram"></i></a>
+     <a href="#"></a> <i class="fab fa-twitter"></i></a>
+     <a href="#"></a> <i class="fab fa-linkedin-in"></i></a>
+  </div>
+  </div>
+ 
+  </div>
+</div>
+</div>
+</footer>
+
+ 
+
+</body>   
+</html>

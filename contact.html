@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <title>Florial - Contact Us</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars" id="menuToggle"></label>
+        <a href="#" class="logo">FLORIA </a>
+        <nav class="navbar">
+            <a href="#" onClick="clickInner('home.html');">Home</a>
+            <a href="./home.html#product">Product</a>
+            <a href="#" onClick="clickInner('about.html');">About Us</a>
+            <a href="#" onClick="clickInner('contact.html');">Contact us</a>
+            <a href="./home.html#reviews">Reviews</a>
+        </nav>
+        <div class="icons">
+
+            <a href="#" onclick="clickInner('checkout.html');" class="fas fa-shopping-cart"></a>
+            <a href="#" onclick="clickInner('login.html');" class="fas fa-user"></a>
+        </div>
+    </header>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            console.log("navigate")
+            navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        });
+        function clickInner(target) {
+            window.location.href= `./${target}`; // navigate
+        };
+    </script>
+    <section class="contact">
+        <div class="container">
+            <h2>Contact us</h2>
+            <div class=" contact-wrapper">
+                <div class="contact-form">
+                    <h3>send us a message</h3>
+                    <p id="result"></p>
+                    <form action="" name="Formfill" onsubmit="return validation()">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your message" ></textarea>
+
+                        </div>
+                        <button type="submit">send message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact information</h3>
+                    <p><i class="fas fa-phone"></i> +20 015 159 941 10</p>
+                    <p><i class="fas fa-envelope"></i>Hanaelroby@icloud.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 90 street, new cairo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4> company</h4>
+                    <ul class="UL">
+                        <li><a href="#"> about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">privacy policy</a> </li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4> get help</h4>
+                    <ul class="UL">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#"> ordar status</a></li>
+                        <li><a href="#"> payment option</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"></a> <i class="fab fa-facebook-f"></i></a>
+                        <a href="#"></a> <i class="fab fa-instagram"></i></a>
+                        <a href="#"></a> <i class="fab fa-twitter"></i></a>
+                        <a href="#"></a> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script>
+        
+        function validation() {
+            if (document.Formfill.name.value == "") {
+                document.getElementById("result").innerHTML = "Enter Name";
+                return false;
+            }
+            else if (document.Formfill.email.value == "") {
+                document.getElementById("result").innerHTML = "Enter Email";
+                return false;
+            }
+            else if (document.Formfill.message.value == "") {
+                document.getElementById("result").innerHTML = "Enter message";
+                return false;
+            }
+            alert('message is sent');
+
+        }
+
+    </script>
+
+    
+</body>
+
+</html>

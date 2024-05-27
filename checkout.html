@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars" id="menuToggle"></label>
+        <a href="#" class="logo">FLORIA </a>
+        <nav class="navbar">
+            <a href="#" onClick="clickInner('home.html');">Home</a>
+            <a href="./home.html#product">Product</a>
+            <a href="#" onClick="clickInner('about.html');">About Us</a>
+            <a href="#" onClick="clickInner('contact.html');">Contact us</a>
+            <a href="./home.html#reviews">Reviews</a>
+        </nav>
+        <div class="icons">
+
+            <a href="#" onclick="clickInner('checkout.html');" class="fas fa-shopping-cart"></a>
+            <a href="#" onclick="clickInner('login.html');" class="fas fa-user"></a>
+        </div>
+    </header>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            console.log("navigate")
+            navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        });
+        function clickInner(target) {
+            window.location.href= `./${target}`; // navigate
+        };
+    </script>
+    <div class="CheckoutContainer">
+        <h1>Shopping cart</h1>
+        <div class="item-price">
+            <div class="item-container" id="items">
+           
+            </div>
+            <div class="price-container">
+                <div class="user-data">
+                    <!-- alert after submit -->
+                    <p id="result"></p>
+                    <form action="" name="Formfill" onsubmit="return validation()">
+                        <label>Name</label>
+                        <input name="name" type="text" />
+
+                        <label>Email</label>
+                        <input name="email" type="email" />
+
+                        <label>Phone Number</label>
+                        <input name="phoneNumber" type="text" />
+
+                        <label>Location</label>
+                        <!-- MAP HERE -->
+                        <div id="map" style="height: 200px;"></div>
+                    
+                </div>
+                <div class="price">
+                    <div class="price-line price-line-price">
+                        <span>Total Price</span>
+                        <span></span>
+                    </div>
+                    <div class="price-line price-line-count">
+                        <span>Number of Items</span>
+                        <span></span>
+                    </div>
+                    <div class="price-line">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button type="submit" class="btn">Proceed to Checkout</button>
+                    
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4> company</h4>
+                    <ul class="UL">
+                        <li><a href="#"> about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">privacy policy</a> </li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h4> get help</h4>
+                    <ul class="UL">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#"> ordar status</a></li>
+                        <li><a href="#"> payment option</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"></a> <i class="fab fa-facebook-f"></i></a>
+                        <a href="#"></a> <i class="fab fa-instagram"></i></a>
+                        <a href="#"></a> <i class="fab fa-twitter"></i></a>
+                        <a href="#"></a> <i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/checkout.js"></script>
+    <script>
+        const productEnum = {
+            1: {
+                name: "wedding flower",
+                price: 390
+            },
+            2: {
+                name: "in love",
+                price: 420
+            },
+            3: {
+                name: "shiny rose",
+                price: 400
+            },
+            4: {
+                name: "lavander",
+                price: 340
+            },
+            5: {
+                name: "power roses",
+                price: 260
+            },
+            6: {
+                name: "Flower Boot",
+                price: 190
+            },
+            7: {
+                name: "mixed lovely",
+                price: 170
+            },
+            8: {
+                name: "love",
+                price: 220
+            },
+            9: {
+                name: "big love",
+                price: 200
+            }
+        }
+
+        function updateItems() {
+            // Clear items from div="items"
+            document.getElementById('items').textContent = "";
+            // GET THE OLD CART(value of cart) FROM LOCALSTORAGE
+            let cart = JSON.parse(localStorage.getItem('cart')) || {}; 
+            // array of ids because needed for loop
+            let productIds = Object.keys(cart); 
+            let cartCount = productIds.length; 
+
+            for(let i = 0; i<cartCount; i++) {
+                // Create the element(div)
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+
+                // Add HTML content to the element
+                itemDiv.innerHTML = `
+                    <div class="item-img">
+                        <img src="./images/prod-${productIds[i]}.jpeg" alt="img" width="300px">
+                    </div>
+                    <div class="item-info">
+                        <h2 class="item-info-name">${productEnum[productIds[i]].name}</h2>
+                        <h3 class="item-info-price">$${productEnum[productIds[i]].price}</h3>
+                        <div class="item-info-qtn">
+                            <span>Qtn</span>
+                            <span class="item-info-qtn-adj">
+                                <button onclick="changeCount(${productIds[i]},'MINUS')" class="counter-minus">-</button>
+                                <span class="counter-display">${cart[productIds[i]]}</span> 
+                                <button onclick="changeCount(${productIds[i]},'PLUS')" class="counter-plus">+</button>
+                            </span>
+                        </div>
+                        <div class="item-info-remove">
+                            <button onclick=" removeProduct(${productIds[i]})">Remove</button>
+                        </div>
+                    </div>
+                `;
+                
+                // Append the element to the div with ID "items"
+                document.getElementById('items').appendChild(itemDiv);
+
+                    // for total price ,number of items
+                var countSpan = document.querySelector('.price-line-count span:nth-child(2)');
+                var priceSpan = document.querySelector('.price-line-price span:nth-child(2)');
+                
+                // Append the result of getCount() to the second span
+                countSpan.textContent = getCount();
+                priceSpan.textContent = getPrice();
+            }
+        }
+
+        updateItems(); // show all product in checkout
+
+        function changeCount(productId, mode) {
+            // GET THE OLD CART FROM LOCALSTORAGE
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+            // Edit Count TO CART ARRAY
+            if(mode == "PLUS") {
+                cart[productId] = ++cart[productId] || 1;
+            } else {
+                if (cart[productId] == 1){
+                    removeProduct(productId); 
+                    return;
+                } else cart[productId] = --cart[productId] || 1;
+            }
+            // SAVE THE CART
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateItems();
+        }
+
+        function removeProduct(productId) {
+            // GET THE OLD CART FROM LOCALSTORAGE
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+            delete cart[productId]; 
+            // SAVE THE CART
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateItems();
+
+        }
+    
+        function getPrice() {
+            // GET THE OLD CART FROM LOCALSTORAGE
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+            let totalPrice = 0;
+            let productIds = Object.keys(cart);
+            for (let i = 0; i<productIds.length; i++) {
+                totalPrice = totalPrice + (cart[productIds[i]] * productEnum[productIds[i]].price);
+            }
+            return "$" + totalPrice
+        }
+
+        function getCount() {
+            // GET THE OLD CART FROM LOCALSTORAGE
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+            return Object.values(cart).reduce((a, b) => a + b, 0);
+        }
+
+    </script>
+
+    <script>
+        function validation() {
+            if (document.Formfill.name.value == "") {
+                document.getElementById("result").innerHTML = "Enter Name";
+                return false;
+            }
+            else if (document.Formfill.email.value == "") {
+                document.getElementById("result").innerHTML = "Enter Email";
+                return false;
+            }
+            else if (document.Formfill.phoneNumber.value == "") {
+                document.getElementById("result").innerHTML = "Enter Phone Number";
+                return false;
+            }
+            alert('order is done');
+
+        }
+    </script>
+
+</body>
+
+</html>
